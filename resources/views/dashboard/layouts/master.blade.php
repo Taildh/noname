@@ -181,6 +181,8 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- BEGIN PAGE HEADER-->
             @yield('breadcrumb')
 
+            @yield('alert')
+
             @yield('content')
         </div>
     </div>

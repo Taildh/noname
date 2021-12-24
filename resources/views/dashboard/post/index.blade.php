@@ -29,6 +29,22 @@
     </div>
 @endsection
 
+@section('alert')
+    @if(session('success'))
+        <div class="alert alert-success">
+             {{ session('success') }}
+        </div>
+    @elseif (session('delete'))
+        <div class="alert alert-danger">
+             {{ session('delete') }}
+        </div>
+    @elseif(session('create'))
+        <div class="alert alert-success">
+             {{ session('create') }}
+        </div>
+    @endif
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -78,11 +94,13 @@
                                     {{ $post->status == 1 ? "Enabled" : "Disable" }}
                                 </td>
                                 <td>
-                                    <a class="btn btn-circle btn-icon-only green" href="{{ route('dashboard.posts.edit', $post->id) }}">
+                                    <a class="btn btn-circle btn-icon-only green"
+                                       href="{{ route('dashboard.posts.edit', $post->id) }}">
                                         <i class="icon-wrench"></i>
                                     </a>
                                     <span>
-                                        <form action="{{ route('dashboard.posts.destroy', $post->id) }}" method="post" style="display: inline-block">
+                                        <form action="{{ route('dashboard.posts.destroy', $post->id) }}" method="post"
+                                              style="display: inline-block">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-circle btn-icon-only red">

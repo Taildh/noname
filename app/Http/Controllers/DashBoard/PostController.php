@@ -34,7 +34,7 @@ class PostController extends Controller
                 'image' => $request->hasFile('image') ? '/' . $request->image->storeAs('images/posts', $request->image->getClientOriginalName()) : "",
                 'status' => $request->status ? $request->status : 0
             ]);
-            return redirect()->route('dashboard.posts.index')->with('success', 'Created post successfully!');
+            return redirect()->route('dashboard.posts.index')->with('create', 'Created post successfully!');
         } catch (\Exception $exception) {
             dd($exception->getMessage());
         }
@@ -66,6 +66,8 @@ class PostController extends Controller
 
     public function destroy (Post $post)
     {
-        dd($post);
+        $post->delete();
+
+        return redirect()->route('dashboard.posts.index')->with('delete', 'Post deleted successfully');
     }
 }

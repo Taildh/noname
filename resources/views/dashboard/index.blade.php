@@ -1,5 +1,9 @@
 @extends('dashboard.layouts.master')
 
+@section('title')
+    Metronic | Index
+@endsection
+
 @section('breadcrumb')
     <div class="page-bar">
         <ul class="page-breadcrumb">

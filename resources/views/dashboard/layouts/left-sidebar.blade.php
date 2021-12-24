@@ -41,26 +41,19 @@
 
             <li class="start active open">
                 <a href="javascript:;">
-                    <i class="icon-home"></i>
-                    <span class="title">Dashboard</span>
+                    <i class="icon-folder"></i>
+                    <span class="title">Posts</span>
                     <span class="selected"></span>
                     <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="active">
-                        <a href="index.html">
-                            <i class="icon-bar-chart"></i>
-                            Default Dashboard</a>
+                        <a href="{{ route('dashboard.posts.index') }}">
+                            <i class="icon-folder"></i> Posts</a>
                     </li>
                     <li>
-                        <a href="index_2.html">
-                            <i class="icon-bulb"></i>
-                            New Dashboard #1</a>
-                    </li>
-                    <li>
-                        <a href="index_3.html">
-                            <i class="icon-graph"></i>
-                            New Dashboard #2</a>
+                        <a href="{{ route('dashboard.posts.create') }}">
+                            <i class="icon-plus"></i> Create new post</a>
                     </li>
                 </ul>
             </li>

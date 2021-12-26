@@ -229,6 +229,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{ asset('metronic/assets/pages/scripts/index.js') }}" type="text/javascript"></script>
 <script src="{{ asset('metronic/assets/pages/scripts/tasks.js') }}" type="text/javascript"></script>
 
+<script src="{{ asset('metronic/assets/global/scripts/common.js') }}" type="text/javascript"></script>
+
 @yield('script')
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
@@ -18,7 +19,7 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function postLogin (Request $request)
+    public function postLogin (LoginRequest $request)
     {
         $credentials = [
             'email' => $request->email,

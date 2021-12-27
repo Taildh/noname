@@ -19,6 +19,20 @@
     </div>
 @endsection
 
+@section('alert')
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-success">
+            {{ session('error') }}
+        </div>
+    @endif
+@endsection
+
 @section('content')
     <h3 class="page-title">
         Dashboard <small>reports & statistics</small>
